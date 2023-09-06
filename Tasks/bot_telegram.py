@@ -77,7 +77,7 @@ async def on_startup(_):
 b1 = KeyboardButton('/Посмотреть_базу')
 b2 = KeyboardButton('/добавить_сотрудника')
 b3 = KeyboardButton('/удалить_запись')
-b4 = KeyboardButton('/найти_по_id')
+b4 =KeyboardButton('/найти_по_id')
 
 kb_client = ReplyKeyboardMarkup(resize_keyboard=True)  # one_time_keyboard=True
 
@@ -87,7 +87,7 @@ kb_client.add(b1).insert(b2).add(b3).insert(b4)
 @dp.message_handler(commands=['start', 'help'])
 async def command_start(message: types.Message):
     try:
-        await bot.send_message(message.from_user.id, 'Главное меню:\n1 - посмотреть базу: \n2 - добавить сотрудника:\
+         await bot.send_message(message.from_user.id, 'Главное меню:\n1 - посмотреть базу: \n2 - добавить сотрудника:\
          \n3 - удалить запись\n4 - найти по id\nвведите номер пункта меню: ', reply_markup=kb_client)
         # await message.delete()
     except:
